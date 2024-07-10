@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <!-- Applied Leaves Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Calendar Section -->
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">Calendar</h2>
+                <!-- Placeholder for Calendar -->
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <p class="text-center">Calendar Placeholder</p>
+                </div>
+            </div>
+            <!-- Leave Details Section -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Applied Leaves</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-4 border-b">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
+                        <div class="flex-1">
+                            <p><strong>John Doe</strong></p>
+                            <p>On Leave for 3 days</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-green-500">Approved</p>
+                            <p>From: Mar 22, 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 p-4">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
+                        <div class="flex-1">
+                            <p><strong>Jane Smith</strong></p>
+                            <p>On Leave for 5 days</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-yellow-500">Pending</p>
+                            <p>From: Apr 1, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apply Leave Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Apply Leave</h2>
+            <form id="leaveForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="leaveDate" class="block text-gray-700">Leave Date</label>
+                        <input type="date" id="leaveDate" name="leaveDate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="leaveType" class="block text-gray-700">Leave Type</label>
+                        <select id="leaveType" name="leaveType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                            <option value="sick">Sick Leave</option>
+                            <option value="casual">Casual Leave</option>
+                            <option value="annual">Annual Leave</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="leaveIssue" class="block text-gray-700">Issue</label>
+                    <textarea id="leaveIssue" name="leaveIssue" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Apply</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
