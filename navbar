@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Aureole Pharma Pvt Ltd</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="bg-gray-100 text-gray-800" style="font-family:'Poppins';">
+    <nav class="bg-white shadow-md md:sticky top-0 nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="text-2xl font-bold text-gray-900">
+                            <img class="w-16" src="https://aureolepharmatech.com/wp-content/uploads/elementor/thumbs/WhatsApp_Image_2023-09-25_at_1.26.49_PM-removebg-preview-qea802enzp4yro7uvfmmpmlyj78wgtqissn1rmfary.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="{% url 'home' %}" class="border-b-2 border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 {% block active_home %}{% endblock %} text-sm font-medium">Home</a>
+                        <a href="{% url 'leave' %}" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent {% block active_leave %}{% endblock %} text-sm font-medium">Leaves</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent {% block active_assets %}{% endblock %} text-sm font-medium">Assets</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent {% block active_contact %}{% endblock %} text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex items-center align-center">
+                    <span class="text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Ritesh Mahale</span>
+                    <span>
+                        <img class="rounded-full" src="https://via.placeholder.com/50X50" alt="Profile Image">
+                    </span>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <div class="bg-white inline-flex items-center justify-center font-semibold p-2 rounded-md text-black hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                       {% block page_name %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="lg:flex lg:space-x-8">
+            <!-- Main Content -->
+            <div class="lg:w-2/3">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/3">
+                <div class="md:sticky md:top-20">
+                    {% include 'dash/sidebar.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'dash/footer.html' %}
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="sticky bottom-0 border-t-2  left-0 right-0 bg-gray-200 bg-opacity-50 shadow-md sm:hidden" style="backdrop-filter: saturate(180%) blur(10px); border-color:#1e91b9;">
+    <div class="max-w-7xl h-12 mx-auto px-4 py-1">
+        <div class="flex justify-between h-full text-xs">
+            <a href="{% url 'home' %}" class="flex items-center justify-center {% block a_home %}{% endblock %} w-1/4 py-2 text-center text-gray-600 hover:text-gray-900 h-full">
+                <i class="fas fa-home text-lg"></i>
+                <span class="ml-1 ">Home</span>
+            </a>
+            <a href="{% url 'leave' %}" class="flex items-center justify-center {% block a_leave %}{% endblock %} w-1/4 py-2 text-center text-gray-600 hover:text-gray-900">
+                <i class="fas fa-calendar-alt text-lg"></i>
+                <span class="ml-1">Leaves</span>
+            </a>
+            <a href="#" class="flex items-center justify-center w-1/4 py-2 text-center {% block a_assets %}{% endblock %} text-gray-600 hover:text-gray-900">
+                <i class="fas fa-laptop text-lg"></i>
+                <span class="ml-1">Assets</span>
+            </a>
+            <a href="#" class="flex items-center justify-center w-1/4 py-2 text-center {% block a_contact %}{% endblock %} text-gray-600 hover:text-gray-900">
+                <i class="fas fa-address-book text-lg"></i>
+                <span class="ml-1">Contact</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+    {% block extra_js %}
+    <!-- Place for additional JavaScript files -->
+    {% endblock %}
+</body>
+
+</html>
